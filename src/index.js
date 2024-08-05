@@ -1,4 +1,4 @@
-const lcjs = require('@arction/lcjs')
+const lcjs = require('@lightningchart/lcjs')
 const { lightningChart, Themes, emptyFill, AxisTickStrategies, AxisScrollStrategies, emptyLine, IndividualPointFill, ColorHEX } = lcjs
 
 const imgFlag = new Image()
