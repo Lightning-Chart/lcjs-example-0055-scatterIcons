@@ -56,7 +56,7 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[Lightning chart]: https://lightningchart.com/js-charts/api-documentation/v6.0.0/functions/lightningChart-1.html
-[Chart XY]: https://lightningchart.com/js-charts/api-documentation/v6.0.0/classes/ChartXY.html
-[Axis]: https://lightningchart.com/js-charts/api-documentation/v6.0.0/classes/Axis.html
+[Lightning chart]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/functions/lightningChart-1.html
+[Chart XY]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/ChartXY.html
+[Axis]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/Axis.html
 
