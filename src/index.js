@@ -20,9 +20,7 @@ channels = channels.map((ch, i) => {
     const axisY = chart
         .addAxisY({ iStack })
         .setDefaultInterval({ start: 0, end: 1 })
-        .setMargins(iStack > 0 ? 15 : 0, iStack < channels.length - 1 ? 15 : 0)
-        .setMouseInteractions(false)
-        .setChartInteractions(false)
+        .setMargins(iStack > 0 ? 5 : 0, iStack < channels.length - 1 ? 5 : 0)
     const series = chart
         .addPointLineAreaSeries({ axisY, dataPattern: 'ProgressiveX' })
         .setAreaFillStyle(emptyFill)
@@ -77,7 +75,7 @@ const uiAxisY = chart
     .addAxisY({ opposite: true })
     .setTickStrategy(AxisTickStrategies.Empty)
     .setStrokeStyle(emptyLine)
-    .setMouseInteractions(false)
+    .setPointerEvents(false)
     .setInterval({ start: 0, end: 1 })
 const pointSeries = chart
     .addPointLineAreaSeries({
