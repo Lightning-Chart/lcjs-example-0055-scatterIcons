@@ -11,6 +11,7 @@ const lc = lightningChart({
         })
 const chart = lc
     .ChartXY({
+        legend: { visible: false },
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
     .setTitle('Drag different colored annotations from left')
@@ -22,15 +23,14 @@ channels = channels.map((ch, i) => {
         .setDefaultInterval({ start: 0, end: 1 })
         .setMargins(iStack > 0 ? 5 : 0, iStack < channels.length - 1 ? 5 : 0)
     const series = chart
-        .addPointLineAreaSeries({ axisY, dataPattern: 'ProgressiveX' })
-        .setAreaFillStyle(emptyFill)
+        .addLineSeries({ axisY, schema: { x: { pattern: 'progressive' }, y: { pattern: null } } })
         .setMaxSampleCount(100_000)
     return { axisY, series }
 })
 const timeAxis = chart
     .getDefaultAxisX()
     .setTickStrategy(AxisTickStrategies.Time)
-    .setScrollStrategy(AxisScrollStrategies.progressive)
+    .setScrollStrategy(AxisScrollStrategies.scrolling)
     .setDefaultInterval((state) => ({
         end: state.dataMax ?? 0,
         start: (state.dataMax ?? 0) - 15_000,
@@ -78,13 +78,10 @@ const uiAxisY = chart
     .setPointerEvents(false)
     .setInterval({ start: 0, end: 1 })
 const pointSeries = chart
-    .addPointLineAreaSeries({
+    .addPointSeries({
         axisY: uiAxisY,
-        dataPattern: null,
         colors: true,
     })
-    .setAreaFillStyle(emptyFill)
-    .setStrokeStyle(emptyLine)
     .setPointFillStyle(new IndividualPointFill())
     .setPointShape(chart.engine.addCustomIcon(imgFlag))
     .setPointSize(0.2)
